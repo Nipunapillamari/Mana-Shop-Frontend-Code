@@ -1,0 +1,73 @@
+/* BreadCrum.css - Elegant Minimal Design */
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 1200px;
+    margin: 20px auto 30px auto;
+    padding: 0 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+.breadcrumb-link {
+    color: #683B2B;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    opacity: 0.7;
+}
+
+.breadcrumb-link:hover {
+    color: #844B36;
+    opacity: 1;
+}
+
+.breadcrumb-current {
+    color: #2d1b13;
+    font-weight: 500;
+    opacity: 1;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.breadcrumb-separator {
+    color: #dab3a5;
+    font-weight: 300;
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .breadcrumb {
+        margin: 15px auto 25px auto;
+        font-size: 12px;
+        gap: 6px;
+    }
+    
+    .breadcrumb-current {
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .breadcrumb {
+        margin: 12px auto 20px auto;
+        padding: 0 15px;
+        font-size: 11px;
+        gap: 5px;
+    }
+    
+    .breadcrumb-current {
+        max-width: 120px;
+    }
+    
+    .breadcrumb-separator {
+        font-size: 12px;
+    }
+}
