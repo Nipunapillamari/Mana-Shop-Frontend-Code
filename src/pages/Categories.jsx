@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { ShopContext } from "../context/ShopContext";
 import Item from "../components/item/Item";
 import "../pages/css/Categories.css";
+import API from "../config";
 
 const CategoryPage = () => {
 
