@@ -36,7 +36,7 @@ const CategoryPage = () => {
 
   useEffect(()=>{
 
-    fetch(`${API}/${category}`)
+   fetch(`${API}/filters/${category}`)
     .then(res=>res.json())
     .then(data=>setFilterOptions(data))
 
