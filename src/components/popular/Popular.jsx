@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import "./Popular.css";
 import Item from '../item/Item';
-import API from "../config";
+import API from "../../config";
 
 const Popular = () => {
   const [data_product, setpopularproduct] = useState([]);

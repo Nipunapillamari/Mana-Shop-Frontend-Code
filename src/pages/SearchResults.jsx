@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "../pages/css/SearchResults.css"
+import API from "../config"; 
 
 const SearchResults = () => {
   const [products, setProducts] = useState([])

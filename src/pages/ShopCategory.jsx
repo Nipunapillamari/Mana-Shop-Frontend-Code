@@ -11,6 +11,7 @@ import kidsimage2 from "../components/Assets/kidscasualwear.jpg"
 import kidsimage3 from "../components/Assets/kidsnightwear.jpg"
 
 import { useNavigate } from "react-router-dom";
+import API from "../config"; 
 
 import "./css/ShopCategory.css"
 import Item from '../components/item/Item'
