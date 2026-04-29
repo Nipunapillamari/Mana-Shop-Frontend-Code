@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import "./css/LoginSignUp.css"
+import API from "../config";
 
 const LoginSignup = () => {
   const [state, setstate] = useState("Login")
@@ -17,7 +18,7 @@ const LoginSignup = () => {
     console.log("login", formData);
 
     try {
-      const response = await fetch("http://localhost:4000/login", {
+      const response = await fetch(`${API}/login`, {
         method: "POST",
         headers: {
           Accept: "application/json",
