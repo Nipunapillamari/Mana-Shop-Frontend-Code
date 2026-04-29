@@ -53,7 +53,7 @@ const Navbar = () => {
                 menuRef.current.classList.remove("nav-menu-visible")
             }
         }
-    }, [location])
+    }, [location,mobileMenuOpen])
 
     return (
         <div className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>

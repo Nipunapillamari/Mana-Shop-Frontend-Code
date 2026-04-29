@@ -72,7 +72,7 @@ const NewsLetter = () => {
         )}
         
         <p className='newsletter-note'>
-          By subscribing you agree to our <a href="#">Privacy Policy</a>
+          By subscribing you agree to our <a href="/">Privacy Policy</a>
         </p>
       </div>
     </div>

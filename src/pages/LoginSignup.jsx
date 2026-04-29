@@ -128,7 +128,7 @@ const responsedata = text ? JSON.parse(text) : {};      console.log("LOGIN RESPO
 
               {state === "Login" && (
                 <div className="forgot-password">
-                  <a href="#">Forgot password?</a>
+                  <a href="/">Forgot password?</a>
                 </div>
               )}
 
@@ -151,7 +151,7 @@ const responsedata = text ? JSON.parse(text) : {};      console.log("LOGIN RESPO
               </div>
 
               <div className="terms">
-                <p>By continuing, you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a></p>
+                <p>By continuing, you agree to our <a href="/">Terms</a> and <a href="/">Privacy Policy</a></p>
               </div>
             </div>
           </div>
