@@ -2,13 +2,14 @@
 import React, { useEffect, useState } from 'react';
 import "./Popular.css";
 import Item from '../item/Item';
+import API from "../config";
 
 const Popular = () => {
   const [data_product, setpopularproduct] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:4000/popularinwomen")
+    fetch(`${API}/popularinwomen`)
       .then((response) => response.json())
       .then((data) => {
         setpopularproduct(data);

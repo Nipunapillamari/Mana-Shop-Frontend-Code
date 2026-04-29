@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import "./NewCollection.css"
 import Item from '../item/Item'
+import API from "../config";
 
 const NewCollection = () => {
   const [new_collections, setNewCollection] = useState([])
@@ -9,7 +10,7 @@ const NewCollection = () => {
   
   useEffect(() => {
     setLoading(true)
-    fetch("http://localhost:4000/newcollection")
+    fetch(`${API}/newcollection`)
       .then((response) => response.json())
       .then((data) => {
         // Format data to ensure consistent structure

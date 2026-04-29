@@ -51,7 +51,7 @@ const ShopCategory = (props) => {
   }
 
   useEffect(() => {
-    fetch(`http://localhost:4000/categories-by-name/${props.supercategory}`)
+    fetch(`${API}/categories-by-name/${props.supercategory}`)
       .then(res => res.json())
       .then(data => {
         console.log("CATEGORIES FROM API 👉", data);
@@ -63,7 +63,7 @@ const ShopCategory = (props) => {
 
   const [data_product, setpopularproduct] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:4000/shopproducts/${props.supercategory}`)
+    fetch(`${API}/shopproducts/${props.supercategory}`)
       .then((response) => response.json())
       .then((data) => setpopularproduct(data));
   }, [props.supercategory])

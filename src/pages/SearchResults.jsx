@@ -12,7 +12,7 @@ const SearchResults = () => {
 
   useEffect(() => {
     setLoading(true)
-    fetch(`http://localhost:4000/search?q=${query}`)
+    fetch(`${API}/search?q=${query}`)
       .then(res => res.json())
       .then(data => {
         setProducts(data)

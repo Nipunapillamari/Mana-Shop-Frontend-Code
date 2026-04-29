@@ -35,7 +35,7 @@ const CategoryPage = () => {
 
   useEffect(()=>{
 
-    fetch(`http://localhost:4000/filters/${category}`)
+    fetch(`${API}/${category}`)
     .then(res=>res.json())
     .then(data=>setFilterOptions(data))
 

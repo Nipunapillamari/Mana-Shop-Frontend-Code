@@ -48,7 +48,7 @@ const responsedata = text ? JSON.parse(text) : {};      console.log("LOGIN RESPO
   const signup = async () => {
     console.log("sign up", formData)
     let responsedata;
-    await fetch("http://localhost:4000/signup", {
+    await fetch(`${API}/signup`, {
       method: "POST",
       headers: {
         Accept: "application/json",
