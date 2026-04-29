@@ -1,5 +1,4 @@
 import React from 'react'
-import arrow_icon from "../Assets/breadcrum_arrow.png"
 import "./BreadCrum.css"
 import { Link } from 'react-router-dom'
 
