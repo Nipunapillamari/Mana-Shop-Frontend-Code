@@ -25,12 +25,14 @@ const Item = (props) => {
           {!imageLoaded && <div className='image-skeleton' />}
           <img 
             onClick={scrollToTop} 
+            
             src={props.image} 
             alt={props.name}
             className={`item-image ${imageLoaded ? 'loaded' : ''}`}
             onLoad={() => setImageLoaded(true)}
             onError={(e) => {
               e.target.src = 'https://via.placeholder.com/300x300?text=No+Image';
+              console.log(props.image)
               setImageLoaded(true);
             }}
           />
