@@ -11,7 +11,6 @@ import menbanner from "./components/Assets/mensbanner.png"
 import womenbanner from "./components/Assets/womenbanner.png"
 import kidsbanner from "./components/Assets/kids.png"
 import CategoryPage from "./pages/Categories";
-import SubCategoryPage from "./pages/SubCategories";
 import SearchResults from "./pages/SearchResults"
 
 
