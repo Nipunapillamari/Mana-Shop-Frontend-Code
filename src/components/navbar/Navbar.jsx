@@ -1,4 +1,4 @@
-import React, { useContext, useState, useRef, useEffect } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import logo from "../Assets/manalogo.png"
 import "./Navbar.css"
 import { Link, useLocation, useNavigate } from 'react-router-dom'
