@@ -9,7 +9,6 @@ const Navbar = () => {
     const [scrolled, setScrolled] = useState(false)
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const { getTotalCartItem } = useContext(ShopContext)
-    // const menuRef = useRef()
     const location = useLocation()
     const [search, setSearch] = useState("")
     const navigate = useNavigate()
