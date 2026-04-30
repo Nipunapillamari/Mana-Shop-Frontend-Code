@@ -9,7 +9,7 @@ const Navbar = () => {
     const [scrolled, setScrolled] = useState(false)
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const { getTotalCartItem } = useContext(ShopContext)
-    const menuRef = useRef()
+    // const menuRef = useRef()
     const location = useLocation()
     const [search, setSearch] = useState("")
     const navigate = useNavigate()
@@ -34,26 +34,21 @@ const Navbar = () => {
     }
 
     const dropdown_toggle = () => {
-        setMobileMenuOpen(!mobileMenuOpen)
-        if (menuRef.current) {
-            menuRef.current.classList.toggle("nav-menu-visible")
-        }
+        setMobileMenuOpen(prev => !prev)
     }
 
     useEffect(() => {
         const path = location.pathname
+
         if (path === '/') setMenu("shop")
         else if (path === '/women') setMenu("women")
         else if (path === '/men') setMenu("men")
         else if (path === '/kids') setMenu("kids")
-        
-        if (mobileMenuOpen) {
-            setMobileMenuOpen(false)
-            if (menuRef.current) {
-                menuRef.current.classList.remove("nav-menu-visible")
-            }
-        }
-    }, [location,mobileMenuOpen])
+
+        // close menu on route change
+        setMobileMenuOpen(false)
+
+    }, [location])
 
     return (
         <div className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
@@ -62,9 +57,9 @@ const Navbar = () => {
                 <div className='nav_logo'>
                     <Link to="/" className="logo-link">
                         {!imageError ? (
-                            <img 
-                                src={logo} 
-                                alt="Shopper" 
+                            <img
+                                src={logo}
+                                alt="Shopper"
                                 onError={() => setImageError(true)}
                             />
                         ) : (
@@ -86,25 +81,37 @@ const Navbar = () => {
                     />
                     <button onClick={handleSearch} className="search-btn">
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <circle cx="11" cy="11" r="8"/>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                            <circle cx="11" cy="11" r="8" />
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
                         </svg>
                     </button>
                 </div>
 
                 {/* Navigation Menu */}
-                <ul className='navbar_menu' ref={menuRef}>
+                <ul className={`navbar_menu ${mobileMenuOpen ? 'nav-menu-visible' : ''}`}>
                     <li className={menu === "shop" ? "active" : ""}>
-                        <Link to="/" onClick={() => setMenu("shop")}>Shop</Link>
+                        <Link to="/" onClick={() => {
+                            setMenu("shop")
+                            setMobileMenuOpen(false)
+                        }}>Shop</Link>
                     </li>
                     <li className={menu === "women" ? "active" : ""}>
-                        <Link to="/women" onClick={() => setMenu("women")}>Women</Link>
+                        <Link to="/women" onClick={() => {
+                            setMenu("women")
+                            setMobileMenuOpen(false)
+                        }}>Women</Link>
                     </li>
                     <li className={menu === "men" ? "active" : ""}>
-                        <Link to="/men" onClick={() => setMenu("men")}>Men</Link>
+                        <Link to="/men" onClick={() => {
+                            setMenu("men")
+                            setMobileMenuOpen(false)
+                        }}>Men</Link>
                     </li>
                     <li className={menu === "kids" ? "active" : ""}>
-                        <Link to="/kids" onClick={() => setMenu("kids")}>Kids</Link>
+                        <Link to="/kids" onClick={() => {
+                            setMenu("kids")
+                            setMobileMenuOpen(false)
+                        }}>Kids</Link>
                     </li>
                 </ul>
 
@@ -138,9 +145,9 @@ const Navbar = () => {
 
                     <Link to="/cart" className="cart-container">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                            <circle cx="9" cy="21" r="1"/>
-                            <circle cx="20" cy="21" r="1"/>
-                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                            <circle cx="9" cy="21" r="1" />
+                            <circle cx="20" cy="21" r="1" />
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
                         </svg>
                         {getTotalCartItem() > 0 && (
                             <div className='cart_count'>{getTotalCartItem()}</div>
